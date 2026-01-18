@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "ZakVibe Pro Xray",
+  "version": "1.0.0",
+  "description": "Professional Amazon Product Research Tool. Connects to ZakVibe Backend.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.amazon.com/*",
+    "*://*.amazon.co.uk/*",
+    "*://*.amazon.de/*",
+    "http://localhost:5001/*",
+    "*://serpapi.com/*",
+    "*://*.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.com/*", "*://*.amazon.co.uk/*", "*://*.amazon.de/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

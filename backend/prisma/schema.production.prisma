@@ -1,0 +1,57 @@
+// Production Prisma Schema with PostgreSQL
+// Use this for Railway/Render deployment
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"  // Changed from sqlite to postgresql
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String     @id @default(cuid())
+  email            String     @unique
+  password         String
+  name             String?
+  username         String?    @unique
+  role             String?    @default("user")
+  isApproved       Boolean    @default(false)
+  isBlocked        Boolean    @default(false)
+  referralCode     String?
+  instituteName    String?
+  instituteLocation String?
+  walletBalance     Float      @default(0.0)
+  referralCodeExpiry DateTime?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+}
+
+model AdminLog {
+  id         String   @id @default(cuid())
+  action     String
+  userId     String?
+  metadata   String?  // JSON string
+  createdAt  DateTime @default(now())
+}
+
+model Referral {
+  id              String   @id @default(cuid())
+  referrerId      String
+  referredUserId  String
+  reward          Float    @default(0.0)
+  status          String   @default("pending")
+  createdAt       DateTime @default(now())
+}
+
+model Transaction {
+  id              String   @id @default(cuid())
+  userId          String
+  amount          Float
+  type            String   // credit, debit, referral_bonus
+  description     String?
+  balanceBefore   Float
+  balanceAfter    Float
+  createdAt       DateTime @default(now())
+}

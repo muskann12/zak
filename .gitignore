@@ -1,0 +1,70 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# ==========================================
+# SECURITY - NEVER COMMIT THESE
+# ==========================================
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.env
+
+# API Keys and Secrets
+*.pem
+*.key
+*.cert
+secrets/
+credentials/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+prisma/dev.db
+prisma/*.db
+
+# Build outputs (may contain secrets)
+build/
+.next/
+out/
+
+# Source maps (can expose source code)
+*.map
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Security audit reports
+security-audit*
+vulnerability-report*
+
+# Test coverage (may expose code structure)
+coverage/
+.nyc_output/

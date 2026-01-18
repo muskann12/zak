@@ -1,0 +1,5 @@
+{
+  "name": "Ex-ZakVibe - Web Demo",
+  "description": "A React-based simulation of the Ex-ZakVibe Chrome Extension, featuring Xray-style product research, user authentication, payment gateway simulation, and data visualization.",
+  "requestFramePermissions": []
+}
