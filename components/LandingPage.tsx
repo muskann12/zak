@@ -365,129 +365,195 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLogin, onSignupUser,
 
       {/* Hero Section */}
       <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white dark:bg-transparent">
-        {/* Subtle, Professional Background Grid */}
+        {/* Enhanced Background with Animated Gradient Orbs */}
         <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-[#0a0a0a] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-             <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-brand/20 opacity-20 blur-[100px]"></div>
+             {/* Animated gradient orbs */}
+             <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-brand/20 opacity-20 blur-[100px] animate-pulse"></div>
+             <div className="absolute left-1/4 top-20 -z-10 h-[200px] w-[200px] rounded-full bg-purple-500/10 opacity-30 blur-[80px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+             <div className="absolute right-1/4 bottom-20 -z-10 h-[250px] w-[250px] rounded-full bg-blue-500/10 opacity-20 blur-[90px] animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="mb-12 lg:mb-0">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400 text-xs font-bold mb-6 animate-pulse">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span> LIVE Market Intelligence
+          <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="mb-12 lg:mb-0 animate-in fade-in slide-in-from-bottom-8 duration-700">
+              {/* Enhanced Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-600 dark:text-green-400 text-xs font-bold mb-8 shadow-lg shadow-green-500/10 hover:scale-105 transition-transform cursor-default">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                LIVE Market Intelligence
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-[1.1] mb-6">
-                We don't show you products.<br/>
-                <span className="text-brand">We show you who will win.</span>
+
+              {/* Enhanced Heading with Gradient */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
+                We don't show you <span className="relative inline-block">
+                  products
+                  <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 300 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5.5C75 1.5 225 1.5 299 5.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-gray-300 dark:text-gray-700"/>
+                  </svg>
+                </span>.<br/>
+                <span className="bg-gradient-to-r from-brand via-purple-500 to-brand bg-clip-text text-transparent animate-gradient bg-300%">
+                  We show you who will win.
+                </span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Instantly see if an Amazon niche is <span className="text-green-600 dark:text-green-400 font-semibold">open</span>, <span className="text-yellow-600 dark:text-yellow-400 font-semibold">crowded</span>, or <span className="text-red-500 font-semibold">dominated</span> — using live sales, competition, and brand control data.
+
+              {/* Enhanced Description */}
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                Instantly see if an Amazon niche is <span className="text-green-600 dark:text-green-400 font-bold px-2 py-0.5 bg-green-100 dark:bg-green-900/30 rounded">open</span>, <span className="text-yellow-600 dark:text-yellow-400 font-bold px-2 py-0.5 bg-yellow-100 dark:bg-yellow-900/30 rounded">crowded</span>, or <span className="text-red-500 dark:text-red-400 font-bold px-2 py-0.5 bg-red-100 dark:bg-red-900/30 rounded">dominated</span> — using live sales, competition, and brand control data.
               </p>
               
-              {/* Professional Hero Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              {/* Enhanced Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                 <button 
                   onClick={handleDownload}
                   disabled={isDownloading}
-                  className="group bg-brand hover:bg-brand-dark text-white dark:text-black text-lg px-8 py-4 rounded-xl font-bold transition flex items-center justify-center gap-3 shadow-lg shadow-brand/30 hover:-translate-y-0.5 transform duration-200 disabled:opacity-70 disabled:cursor-wait"
+                  className="group relative bg-gradient-to-r from-brand to-purple-500 hover:from-brand-dark hover:to-purple-600 text-white text-lg px-8 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-3 shadow-xl shadow-brand/40 hover:shadow-2xl hover:shadow-brand/50 hover:-translate-y-1 transform duration-300 disabled:opacity-70 disabled:cursor-wait overflow-hidden"
                 >
-                  {isDownloading ? <Loader2 className="animate-spin" size={20}/> : <Zap size={20} className="group-hover:animate-pulse" />} 
-                  {isDownloading ? 'Building...' : 'Try It Free on Amazon'}
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                  <span className="relative z-10 flex items-center gap-3">
+                    {isDownloading ? <Loader2 className="animate-spin" size={22}/> : <Zap size={22} className="group-hover:rotate-12 transition-transform" />} 
+                    {isDownloading ? 'Building Extension...' : 'Try It Free on Amazon'}
+                  </span>
                 </button>
                 <button 
                   onClick={() => setShowStartModal(true)}
-                  className="group bg-white dark:bg-[#151515] hover:bg-gray-50 dark:hover:bg-[#222] text-gray-900 dark:text-white text-lg px-8 py-4 rounded-xl font-bold transition border-2 border-gray-200 dark:border-[#333] hover:border-brand/50 dark:hover:border-brand/50 shadow-sm flex items-center justify-center gap-2"
+                  className="group relative bg-white dark:bg-[#151515] hover:bg-gray-50 dark:hover:bg-[#222] text-gray-900 dark:text-white text-lg px-8 py-4 rounded-xl font-bold transition-all border-2 border-gray-200 dark:border-[#333] hover:border-brand dark:hover:border-brand shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-300 flex items-center justify-center gap-3 overflow-hidden"
                 >
-                  <Globe size={18} className="text-gray-400 group-hover:text-brand transition"/> Paste an Amazon Link
+                  <span className="absolute inset-0 w-0 bg-gradient-to-r from-brand/5 to-purple-500/5 group-hover:w-full transition-all duration-500"></span>
+                  <span className="relative z-10 flex items-center gap-3">
+                    <Globe size={20} className="text-gray-400 group-hover:text-brand group-hover:rotate-180 transition-all duration-500"/> 
+                    Paste Amazon Link
+                  </span>
                 </button>
               </div>
               
-              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs font-medium text-gray-500">
-                  <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              {/* Enhanced Trust Indicators */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs font-semibold text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-[#333] hover:border-green-500/50 dark:hover:border-green-500/50 transition-colors">
+                      <div className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </div>
                       <span>Live Data</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                      <ShieldCheck size={14} className="text-gray-400"/>
-                      <span>100% Transparent Calculations</span>
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-[#333] hover:border-brand/50 transition-colors">
+                      <ShieldCheck size={16} className="text-brand"/>
+                      <span>Transparent Calculations</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                      <BarChart3 size={14} className="text-gray-400"/>
-                      <span>Public Amazon Data Only</span>
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-[#333] hover:border-brand/50 transition-colors">
+                      <BarChart3 size={16} className="text-brand"/>
+                      <span>Public Amazon Data</span>
                   </div>
               </div>
             </div>
             
-            <div className="relative mx-auto w-full max-w-[600px] lg:max-w-none perspective-1000 group">
-                <div className="absolute inset-0 bg-brand/20 rounded-2xl blur-3xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                <div className="relative bg-white dark:bg-[#151515] rounded-xl shadow-2xl border border-gray-200 dark:border-[#333] transform rotate-y-6 group-hover:rotate-y-0 transition-transform duration-700 overflow-hidden flex flex-col h-[400px]">
+            {/* Enhanced Preview Card with 3D Effects */}
+            <div className="relative mx-auto w-full max-w-[600px] lg:max-w-none perspective-1000 group animate-in fade-in slide-in-from-right-8 duration-700" style={{ animationDelay: '200ms' }}>
+                {/* Glowing background effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-brand/30 via-purple-500/30 to-brand/30 rounded-2xl blur-3xl opacity-0 group-hover:opacity-40 transition-all duration-700 animate-pulse"></div>
+                
+                {/* Main Card Container */}
+                <div className="relative bg-gradient-to-br from-white to-gray-50 dark:from-[#151515] dark:to-[#0a0a0a] rounded-2xl shadow-2xl hover:shadow-3xl border-2 border-gray-200 dark:border-[#333] hover:border-brand/50 dark:hover:border-brand/50 transform hover:scale-[1.02] transition-all duration-700 overflow-hidden flex flex-col h-[480px]">
                     
-                    {/* Mock Extension Header */}
-                    <div className="bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-[#333] p-4 flex justify-between items-center">
+                    {/* Animated gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1500ms] pointer-events-none"></div>
+                    
+                    {/* Enhanced Extension Header */}
+                    <div className="relative bg-gradient-to-r from-white to-gray-50 dark:from-[#1a1a1a] dark:to-[#151515] border-b-2 border-gray-200 dark:border-[#333] p-5 flex justify-between items-center">
                         <div className="flex items-center gap-3">
-                             <div className="bg-brand text-white dark:text-black w-7 h-7 rounded-lg flex items-center justify-center font-bold text-sm">⚡</div>
-                             <div className="font-bold text-gray-900 dark:text-white text-sm">Amazon <span className="text-brand">Market Radar</span></div>
+                             <div className="relative bg-gradient-to-br from-brand to-purple-500 text-white w-9 h-9 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-brand/30 group-hover:rotate-12 transition-transform duration-500">
+                               ⚡
+                               <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                             </div>
+                             <div className="font-bold text-gray-900 dark:text-white text-base">Amazon <span className="bg-gradient-to-r from-brand to-purple-500 bg-clip-text text-transparent">Market Radar</span></div>
                         </div>
                         <div className="flex items-center gap-3">
-                             <div className="flex items-center gap-1.5 px-2 py-1 bg-green-100 dark:bg-green-900/30 rounded text-[10px] font-bold text-green-600 dark:text-green-400">
-                               <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> LIVE
+                             <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-lg text-[11px] font-bold text-green-600 dark:text-green-400 shadow-sm">
+                               <span className="relative flex h-2 w-2">
+                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                               </span>
+                               LIVE
                              </div>
                         </div>
                     </div>
 
-                    {/* Market Intelligence Summary */}
-                    <div className="bg-gray-50 dark:bg-[#151515] border-b border-gray-200 dark:border-[#333] p-4">
-                         <div className="grid grid-cols-4 gap-4 text-center">
-                             <div>
-                                 <div className="text-[10px] uppercase font-bold text-gray-400 mb-1">Demand</div>
-                                 <div className="text-lg font-black text-green-600 dark:text-green-400">8.2</div>
+                    {/* Enhanced Market Intelligence Summary with Animations */}
+                    <div className="bg-gradient-to-b from-gray-50 to-white dark:from-[#151515] dark:to-[#0f0f0f] border-b border-gray-200 dark:border-[#333] p-5">
+                         <div className="grid grid-cols-4 gap-3 text-center">
+                             <div className="group/stat hover:scale-105 transition-transform duration-300">
+                                 <div className="text-[11px] uppercase font-bold text-gray-400 mb-2 tracking-wider">Demand</div>
+                                 <div className="text-2xl font-black text-green-600 dark:text-green-400 group-hover/stat:scale-110 transition-transform">8.2</div>
+                                 <div className="h-1 w-full bg-gray-200 dark:bg-[#222] rounded-full mt-2 overflow-hidden">
+                                   <div className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full w-[82%]"></div>
+                                 </div>
                              </div>
-                             <div>
-                                 <div className="text-[10px] uppercase font-bold text-gray-400 mb-1">Competition</div>
-                                 <div className="text-lg font-black text-yellow-600 dark:text-yellow-400">5.4</div>
+                             <div className="group/stat hover:scale-105 transition-transform duration-300">
+                                 <div className="text-[11px] uppercase font-bold text-gray-400 mb-2 tracking-wider">Competition</div>
+                                 <div className="text-2xl font-black text-yellow-600 dark:text-yellow-400 group-hover/stat:scale-110 transition-transform">5.4</div>
+                                 <div className="h-1 w-full bg-gray-200 dark:bg-[#222] rounded-full mt-2 overflow-hidden">
+                                   <div className="h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full w-[54%]"></div>
+                                 </div>
                              </div>
-                             <div>
-                                 <div className="text-[10px] uppercase font-bold text-gray-400 mb-1">Dominance</div>
-                                 <div className="text-lg font-black text-gray-900 dark:text-white">23%</div>
+                             <div className="group/stat hover:scale-105 transition-transform duration-300">
+                                 <div className="text-[11px] uppercase font-bold text-gray-400 mb-2 tracking-wider">Dominance</div>
+                                 <div className="text-2xl font-black text-gray-900 dark:text-white group-hover/stat:scale-110 transition-transform">23%</div>
+                                 <div className="h-1 w-full bg-gray-200 dark:bg-[#222] rounded-full mt-2 overflow-hidden">
+                                   <div className="h-full bg-gradient-to-r from-gray-500 to-gray-600 rounded-full w-[23%]"></div>
+                                 </div>
                              </div>
-                             <div>
-                                 <div className="text-[10px] uppercase font-bold text-gray-400 mb-1">Opportunity</div>
-                                 <div className="text-lg font-black text-brand">7/10</div>
+                             <div className="group/stat hover:scale-105 transition-transform duration-300">
+                                 <div className="text-[11px] uppercase font-bold text-gray-400 mb-2 tracking-wider">Opportunity</div>
+                                 <div className="text-2xl font-black bg-gradient-to-r from-brand to-purple-500 bg-clip-text text-transparent group-hover/stat:scale-110 transition-transform">7/10</div>
+                                 <div className="h-1 w-full bg-gray-200 dark:bg-[#222] rounded-full mt-2 overflow-hidden">
+                                   <div className="h-full bg-gradient-to-r from-brand to-purple-500 rounded-full w-[70%]"></div>
+                                 </div>
                              </div>
                          </div>
                     </div>
 
-                    {/* Market Verdict */}
-                    <div className="flex-1 bg-white dark:bg-[#0f0f0f] p-6 flex flex-col items-center justify-center relative">
-                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-[#0f0f0f] opacity-30 pointer-events-none"></div>
+                    {/* Enhanced Market Verdict with Better Visuals */}
+                    <div className="flex-1 bg-gradient-to-br from-white via-gray-50 to-white dark:from-[#0f0f0f] dark:via-[#151515] dark:to-[#0f0f0f] p-6 flex flex-col items-center justify-center relative">
+                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent opacity-50 pointer-events-none"></div>
                          <div className="relative z-10 text-center">
-                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-400 text-sm font-bold mb-4">
-                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> MARKET OPEN
+                             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-full text-green-700 dark:text-green-400 text-sm font-bold mb-5 shadow-lg shadow-green-500/20 border border-green-500/30">
+                                 <span className="relative flex h-2.5 w-2.5">
+                                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                 </span>
+                                 MARKET OPEN
                              </div>
-                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">This niche is worth entering</h3>
-                             <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs mb-6">Low brand dominance with strong demand signals. Top 10 sellers show healthy distribution.</p>
+                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">This niche is worth entering</h3>
+                             <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs mb-6 leading-relaxed">Low brand dominance with strong demand signals. Top 10 sellers show healthy distribution.</p>
                              
-                             <div className="grid grid-cols-3 gap-4 text-[11px]">
-                                 <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-lg p-3">
-                                     <div className="text-gray-400 mb-1">Top 10 Rev</div>
-                                     <div className="font-bold text-gray-900 dark:text-white">$847K</div>
+                             <div className="grid grid-cols-3 gap-3 text-[11px]">
+                                 <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-3 border border-gray-200 dark:border-[#333] hover:border-brand/50 dark:hover:border-brand/50 transition-colors shadow-sm hover:shadow-md">
+                                     <div className="text-gray-400 mb-1.5 font-semibold">Top 10 Rev</div>
+                                     <div className="font-black text-base text-gray-900 dark:text-white">$847K</div>
                                  </div>
-                                 <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-lg p-3">
-                                     <div className="text-gray-400 mb-1">Avg Reviews</div>
-                                     <div className="font-bold text-gray-900 dark:text-white">342</div>
+                                 <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-3 border border-gray-200 dark:border-[#333] hover:border-brand/50 dark:hover:border-brand/50 transition-colors shadow-sm hover:shadow-md">
+                                     <div className="text-gray-400 mb-1.5 font-semibold">Avg Reviews</div>
+                                     <div className="font-black text-base text-gray-900 dark:text-white">342</div>
                                  </div>
-                                 <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-lg p-3">
-                                     <div className="text-gray-400 mb-1">Avg Price</div>
-                                     <div className="font-bold text-gray-900 dark:text-white">$31.50</div>
+                                 <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-3 border border-gray-200 dark:border-[#333] hover:border-brand/50 dark:hover:border-brand/50 transition-colors shadow-sm hover:shadow-md">
+                                     <div className="text-gray-400 mb-1.5 font-semibold">Avg Price</div>
+                                     <div className="font-black text-base text-gray-900 dark:text-white">$31.50</div>
                                  </div>
                              </div>
                          </div>
                     </div>
 
-                    {/* Mock Footer */}
-                    <div className="bg-gray-50 dark:bg-[#1a1a1a] border-t border-gray-200 dark:border-[#333] p-3 flex justify-between items-center text-[10px]">
-                         <div className="text-gray-500 flex items-center gap-2"><Target size={12}/> Keyword: "garlic press stainless steel"</div>
-                         <div className="text-gray-400">Based on Top 10 organic results</div>
+                    {/* Enhanced Footer */}
+                    <div className="bg-gradient-to-r from-gray-50 to-white dark:from-[#1a1a1a] dark:to-[#151515] border-t-2 border-gray-200 dark:border-[#333] p-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px]">
+                         <div className="text-gray-500 dark:text-gray-400 flex items-center gap-2 font-medium">
+                           <Target size={14} className="text-brand"/> 
+                           Keyword: <span className="text-gray-900 dark:text-white font-bold">"garlic press stainless steel"</span>
+                         </div>
+                         <div className="text-gray-400 flex items-center gap-1.5">
+                           <Activity size={12} className="text-green-500"/> 
+                           Based on Top 10 organic results
+                         </div>
                     </div>
                 </div>
             </div>
